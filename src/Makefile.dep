@@ -1,0 +1,27 @@
+tcp_server.o: tcp_server.cpp tcp_server.h tcp_session.h event_handler.h \
+ common.h socket.h buffer.h log.h event_loop.h inform_handler.h \
+ timing_wheel.h timer_handler.h acceptor.h event_loop_thread.h
+common_parse.o: common_parse.cpp common_parse.h
+socket.o: socket.cpp socket.h log.h
+event_handler.o: event_handler.cpp event_handler.h common.h
+acceptor.o: acceptor.cpp acceptor.h socket.h event_handler.h common.h \
+ tcp_server.h tcp_session.h buffer.h log.h event_loop.h inform_handler.h \
+ timing_wheel.h timer_handler.h
+timing_wheel.o: timing_wheel.cpp timing_wheel.h event_loop.h common.h \
+ inform_handler.h event_handler.h timer_handler.h log.h
+tcp_session.o: tcp_session.cpp tcp_session.h event_handler.h common.h \
+ socket.h buffer.h log.h event_loop.h inform_handler.h timing_wheel.h \
+ timer_handler.h tcp_server.h
+inform_handler.o: inform_handler.cpp inform_handler.h event_handler.h \
+ common.h event_loop.h timing_wheel.h timer_handler.h log.h
+log.o: log.cpp log.h
+event_loop_thread.o: event_loop_thread.cpp event_loop_thread.h \
+ tcp_server.h tcp_session.h event_handler.h common.h socket.h buffer.h \
+ log.h event_loop.h inform_handler.h timing_wheel.h timer_handler.h
+timer_handler.o: timer_handler.cpp timer_handler.h event_handler.h \
+ common.h event_loop.h inform_handler.h timing_wheel.h log.h
+common.o: common.cpp common.h
+buffer.o: buffer.cpp buffer.h log.h
+event_loop.o: event_loop.cpp event_loop.h common.h inform_handler.h \
+ event_handler.h timing_wheel.h timer_handler.h tcp_server.h \
+ tcp_session.h socket.h buffer.h log.h
